@@ -50,7 +50,10 @@ public class SelectionManager : MonoBehaviour
 
     void selectionRaycast()
     {
-        Vector2 mousePos = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+        var coord_x = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
+        var coord_y = Camera.main.ScreenToWorldPoint(Input.mousePosition).y;
+
+        Vector2 mousePos = new Vector2(coord_x, coord_y);
 
         RaycastHit2D raycast = Physics2D.Raycast(mousePos, Vector2.zero, 0f);
 
